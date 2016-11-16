@@ -43,6 +43,13 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class demo {
+  $pkg = $::osfamily ? {
+    'RedHat' => 'ntpd',
+    default  => 'ntp'
+  }
 
+  package { $pkg:
+    ensure => installed,
+  }
 
 }
