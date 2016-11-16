@@ -42,7 +42,9 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class demo {
+class demo (
+  Array[String] $servers = [],
+) {
   $pkg = $::osfamily ? {
     'RedHat' => 'ntpd',
     default  => 'ntp'
@@ -52,4 +54,11 @@ class demo {
     ensure => installed,
   }
 
+  concat { '/etc/ntpd.conf': }
+  $servers.each |$server| {
+    concat::fragment { "server ${server}":
+      target  => '/etc/ntpd.conf',
+      content => inline_epp('server <%= @server %>'), 
+    }
+  }
 }
