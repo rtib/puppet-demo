@@ -1,0 +1,15 @@
+{
+  "name": "puppet-demo",
+  "version": "0.1.0",
+  "author": "puppet",
+  "summary": "This is a Demo module for testing tutorials.",
+  "license": "Apache-2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
