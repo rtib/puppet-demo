@@ -55,10 +55,10 @@ class demo (
   }
 
   concat { '/etc/ntpd.conf': }
-  $servers.each |$server| {
-    concat::fragment { "server ${server}":
+  $servers.each |String $server| {
+    concat::fragment { "server line for ${server}":
       target  => '/etc/ntpd.conf',
-      content => inline_epp('server <%= @server %>'),
+      content => inline_epp('server <%= $server %>'),
     }
   }
 }
