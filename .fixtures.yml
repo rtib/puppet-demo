@@ -1,6 +1,6 @@
 fixtures:
   symlinks:
-    cassandra: "#{source_dir}"
+    demo: "#{source_dir}"
   forge_modules:
     stdlib:
       repo: 'puppetlabs/stdlib'
