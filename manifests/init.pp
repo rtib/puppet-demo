@@ -45,7 +45,7 @@
 class demo (
   Array[String] $servers = [],
 ) {
-  $pkg = $::osfamily ? {
+  $pkg = $::facts['os']['family'] ? {
     'RedHat' => 'ntpd',
     default  => 'ntp'
   }

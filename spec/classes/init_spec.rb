@@ -3,7 +3,7 @@ describe 'demo' do
   context 'with default values for all parameters on debian' do
     let :facts do
       {
-        osfamily: 'Debian'
+        :os => { :family => 'Debian' }
       }
     end
     it do
@@ -16,7 +16,7 @@ describe 'demo' do
   context 'with single server value on debian' do
     let :facts do
       {
-        osfamily: 'Debian'
+        :os => { :family => 'Debian' }
       }
     end
     let :params do
@@ -38,7 +38,7 @@ describe 'demo' do
   context 'with multiple server value on debian' do
     let :facts do
       {
-        osfamily: 'Debian'
+        :os => { :family => 'Debian' }
       }
     end
     let :params do
@@ -64,7 +64,7 @@ describe 'demo' do
   context 'with default values for all parameters on redhat' do
     let :facts do
       {
-        osfamily: 'Redhat'
+        :os => { :family => 'RedHat' }
       }
     end
     it do
